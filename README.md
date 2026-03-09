@@ -101,24 +101,6 @@ Cada integrante trabaja en su módulo correspondiente para evitar conflictos.
 
 ---
 
-## 📅 Cronograma General
-
-| Semana | Actividad |
-|------|------|
-| 1 | Planeación del proyecto |
-| 2 - 4 | Desarrollo del backend |
-| 2 - 6 | Desarrollo del frontend |
-| 5 - 7 | Integración del sistema |
-| 8 | Pruebas y correcciones |
-
----
-
-## 📷 Prototipo de la Aplicación
-
-Aquí se agregarán capturas de pantalla del prototipo y de la aplicación final.
-
----
-
 ## 📌 Estado del Proyecto
 
 🟡 En desarrollo
