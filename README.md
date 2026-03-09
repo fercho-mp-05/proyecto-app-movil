@@ -83,9 +83,9 @@ project-root
 
 | Nombre | Rol | Responsabilidades |
 |------|------|------|
-| Integrante 1 | Frontend Developer | Desarrollo de la app en Flutter |
-| Integrante 2 | Backend Developer | Desarrollo de la API |
-| Integrante 3 | Database Developer | Diseño y gestión de la base de datos |
+| Fernando Montañez | Frontend Developer | Desarrollo de la app en Flutter |
+| Dumar Amado | Backend Developer | Desarrollo de la API |
+| Marcos Guzman | Database Developer | Diseño y gestión de la base de datos |
 
 ---
 
