@@ -1,14 +1,20 @@
+import 'package:app_movil/pages/home.dart';
+import 'package:app_movil/pages/register.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
-
           /// Fondo con gradiente
           Container(
             decoration: const BoxDecoration(
@@ -25,10 +31,7 @@ class LoginScreen extends StatelessWidget {
           ),
 
           /// Ondas decorativas
-          CustomPaint(
-            size: Size.infinite,
-            painter: ModernWavePainter(),
-          ),
+          CustomPaint(size: Size.infinite, painter: ModernWavePainter()),
 
           /// Contenido login
           Center(
@@ -43,7 +46,6 @@ class LoginScreen extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-
                     const Text(
                       "Bienvenido",
                       style: TextStyle(
@@ -55,6 +57,7 @@ class LoginScreen extends StatelessWidget {
 
                     const SizedBox(height: 25),
 
+                    /// Campo correo
                     TextField(
                       decoration: InputDecoration(
                         hintText: "Correo",
@@ -67,6 +70,7 @@ class LoginScreen extends StatelessWidget {
 
                     const SizedBox(height: 15),
 
+                    /// Campo contraseña
                     TextField(
                       obscureText: true,
                       decoration: InputDecoration(
@@ -80,10 +84,17 @@ class LoginScreen extends StatelessWidget {
 
                     const SizedBox(height: 25),
 
+                    /// BOTON LOGIN
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const Home(),
+                            ),
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFF235347),
                           padding: const EdgeInsets.symmetric(vertical: 15),
@@ -93,15 +104,41 @@ class LoginScreen extends StatelessWidget {
                         ),
                         child: const Text(
                           "Iniciar sesión",
-                          style: TextStyle(fontSize: 16),
+                          style: TextStyle(fontSize: 16, color: Colors.white),
                         ),
                       ),
+                    ),
+
+                    const SizedBox(height: 10),
+
+                    /// BOTON REGISTRO
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text("¿No tienes cuenta?"),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => const RegisterScreen(),
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            "Regístrate",
+                            style: TextStyle(
+                              color: Color(0xFF235347),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );
@@ -111,9 +148,7 @@ class LoginScreen extends StatelessWidget {
 class ModernWavePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-
-    Paint paint1 = Paint()
-      ..color = const Color(0xFF235347).withOpacity(0.6);
+    Paint paint1 = Paint()..color = const Color(0xFF235347).withOpacity(0.6);
 
     Path path1 = Path();
 
@@ -134,8 +169,7 @@ class ModernWavePainter extends CustomPainter {
 
     canvas.drawPath(path1, paint1);
 
-    Paint paint2 = Paint()
-      ..color = const Color(0xFFBEB69B).withOpacity(0.6);
+    Paint paint2 = Paint()..color = const Color(0xFFBEB69B).withOpacity(0.6);
 
     Path path2 = Path();
 
