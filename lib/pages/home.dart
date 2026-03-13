@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -31,33 +33,6 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: const Color(0xffF6F8F7),
 
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: primaryGreen,
-        child: const Icon(Icons.add),
-        onPressed: () {},
-      ),
-
-      bottomNavigationBar: Container(
-        margin: const EdgeInsets.all(15),
-        padding: const EdgeInsets.symmetric(vertical: 10),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(25),
-          boxShadow: [
-            BoxShadow(color: Colors.black.withOpacity(.08), blurRadius: 15),
-          ],
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            navIcon(Icons.home, 0),
-            navIcon(Icons.search, 1),
-            navIcon(Icons.chat, 2),
-            navIcon(Icons.person, 3),
-          ],
-        ),
-      ),
-
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.all(20),
@@ -81,35 +56,15 @@ class _HomeState extends State<Home> {
                   ],
                 ),
                 Row(
-                  children: const [
+                  children: [
                     Icon(Icons.notifications_none),
                     SizedBox(width: 10),
-                    CircleAvatar(
-                      backgroundColor: Color(0xff235347),
-                      child: Icon(Icons.person, color: Colors.white),
-                    ),
                   ],
                 ),
               ],
             ),
 
             const SizedBox(height: 25),
-
-            /// BUSCADOR
-            TextField(
-              decoration: InputDecoration(
-                hintText: "Buscar servicios...",
-                prefixIcon: const Icon(Icons.search),
-                filled: true,
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15),
-                  borderSide: BorderSide.none,
-                ),
-              ),
-            ),
-
-            const SizedBox(height: 30),
 
             /// CATEGORIAS
             const Text(
@@ -152,6 +107,22 @@ class _HomeState extends State<Home> {
 
             const SizedBox(height: 30),
 
+            /// BUSCADOR
+            TextField(
+              decoration: InputDecoration(
+                hintText: "Buscar servicios...",
+                prefixIcon: const Icon(Icons.search),
+                filled: true,
+                fillColor: Colors.white,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15),
+                  borderSide: BorderSide.none,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
             /// SERVICIOS
             const Text(
               "Servicios cerca de ti",
@@ -176,6 +147,13 @@ class _HomeState extends State<Home> {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(0xff235347),
+        onPressed: () {
+          _BuscandoServicios(context);
+        },
+        child: Icon(Icons.radar, color: Colors.white),
       ),
     );
   }
@@ -230,6 +208,13 @@ class _HomeState extends State<Home> {
           ),
         ],
       ),
+    );
+  }
+
+  Future<dynamic> _BuscandoServicios(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (context) => AlertDialog(title: Text("Buscando servicios")),
     );
   }
 }

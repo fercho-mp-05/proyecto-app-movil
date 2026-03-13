@@ -1,5 +1,5 @@
-import 'package:app_movil/pages/home.dart';
 import 'package:app_movil/pages/register.dart';
+import 'package:app_movil/pages/rutas.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -89,9 +89,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.of(context).push(
+                          Navigator.pushReplacement(
+                            context,
                             MaterialPageRoute(
-                              builder: (context) => const Home(),
+                              builder: (_) => Rutas(opcion_ir: 0),
                             ),
                           );
                         },

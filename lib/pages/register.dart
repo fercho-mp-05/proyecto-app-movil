@@ -173,7 +173,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      child: const Text("Ya tengo cuenta"),
+                      child: const Text(
+                        "Ya tengo cuenta",
+                        style: TextStyle(color: Color(0xFF235347)),
+                      ),
                     ),
                   ],
                 ),
