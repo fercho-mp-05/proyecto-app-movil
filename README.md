@@ -84,7 +84,8 @@ project-root
 | Nombre | Rol | Responsabilidades |
 |------|------|------|
 | Fernando Montañez | Frontend Developer | Desarrollo de la app en Flutter |
-| Dumar Amado | Backend Developer | Desarrollo de la API |
+| Dumar Amado | Backend Developer | Desarrollo del backend |
+| Dumar Amado | Backend Developer | Desarrollo del backend y testing |
 | Marcos Guzman | Database Developer | Diseño y gestión de la base de datos |
 
 ---
