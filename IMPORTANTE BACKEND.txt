@@ -1,0 +1,84 @@
+Usuario {
+  id: int
+  nombre: string
+  email: string
+  password: string
+  foto: string
+  telefono: string
+  fecha_registro: datetime
+}
+
+Servicio {
+  id: int
+  usuario_id: int
+  titulo: string
+  descripcion: string
+  categoria: string
+  precio: decimal
+  fecha_creacion: datetime
+}
+
+Categoria {
+  id: int
+  nombre: string
+  icono: string
+}
+
+Conversacion {
+  id: int
+  usuario1_id: int
+  usuario2_id: int
+  fecha_creacion: datetime
+}
+
+Mensaje {
+  id: int
+  conversacion_id: int
+  remitente_id: int
+  mensaje: string
+  fecha: datetime
+}
+
+
+///--------------------------APIS NECESARIAS--------------------------///
+
+Para:
+   - Autenticacion:
+	POST /api/auth/register
+	POST /api/auth/login
+	GET  /api/auth/perfil/{id}
+	PUT  /api/auth/editar
+
+   - Usuarios:
+	GET /api/usuarios
+	GET /api/usuarios/{id}
+	PUT /api/usuarios/{id}
+	DELETE /api/usuarios/{id}
+
+   - Servicios:
+	GET /api/servicios
+	GET /api/servicios/{id}
+	POST /api/servicios
+	PUT /api/servicios/{id}
+	DELETE /api/servicios/{id}
+
+   - Filtros:
+	GET /api/servicios/categoria/{categoria}
+	GET /api/servicios/usuario/{usuario_id}
+	GET /api/servicios?search=texto
+
+   -Chat:
+      - Crear conversación:
+	POST /api/conversaciones
+
+      - Traer conversaciones de un usuario:
+	GET /api/conversaciones/{usuario_id}
+
+      - Traer mensajes:
+	GET /api/mensajes/{conversacion_id}
+
+      - Enviar mensaje:
+	POST /api/mensajes
+
+
+
