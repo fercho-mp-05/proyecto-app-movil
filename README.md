@@ -84,8 +84,8 @@ project-root
 | Nombre | Rol | Responsabilidades |
 |------|------|------|
 | Fernando Montañez | Frontend Developer | Desarrollo de la app en Flutter |
-| Dumar Amado | Backend Developer | Desarrollo del backend |
-| Julieth Daiyana Leguizamón | Backend Developer | Desarrollo del backend y testing |
+| Dumar Amado | Backend Developer | Desarrollo de la API |
+| Julieth Daiyana Leguizamón | Backend Developer | Desarrollo de la API y testing |
 | Marcos Guzman | Database Developer | Diseño y gestión de la base de datos |
 
 ---
